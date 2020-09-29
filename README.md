@@ -69,7 +69,6 @@ Contribution
 
 To start contributing to the extension follow the [contributing guildelines](.github/CONTRIBUTING.md).
 
-
 Customisation
 ------------
 The extension uses libraries to help assist with the frontend implementation for autocomplete, instantsearch, and insight features. It also uses the Algolia PHP client to leverage indexing and search methods from the backend. When you approach customisations for either, you have to understand that you are customising the implementation itself and not the components it is based on.
