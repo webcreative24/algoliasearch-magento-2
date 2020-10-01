@@ -35,6 +35,7 @@ This update will **break compatibility** if you're using the backend facets feat
 ### UPDATES
 - Update setUserToken to cap character length (#1058) 
 - Set forwardToReplicas for copy rules to false (#1059) 
+
 - Use current store id to get settings for replicas (#1057) @flagbit
 - Make sure original price range is saved for configurables (#1015) @flagbit
 
