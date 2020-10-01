@@ -346,7 +346,7 @@ class ProductHelper
 
         $replicas = [];
 
-        if ($this->configHelper->isInstantEnabled($storeId) || $this->configHelper->isBackendRenderingEnabled($storeId)) {
+        if ($this->configHelper->isInstantEnabled($storeId)) {
             $replicas = array_values(array_map(function ($sortingIndex) {
                 return $sortingIndex['name'];
             }, $sortingIndices));
@@ -873,6 +873,11 @@ class ProductHelper
             return $subProductImages;
         }
 
+        $subImage = $subProduct->getData($this->configHelper->getImageType());
+        if (!$subImage || $subImage === 'no_selection') {
+            return $subProductImages;
+        }
+
         $image = $this->imageHelper
             ->init($subProduct, $this->configHelper->getImageType())
             ->resize(
@@ -1048,14 +1053,16 @@ class ProductHelper
 
             $attribute = $facet['attribute'];
 
+            $condition = [
+                'anchoring' => 'contains',
+                'pattern' => '{facet:' . $attribute . '}',
+                'context' => 'magento_filters',
+            ];
+
             $rules[] = [
                 'objectID' => 'filter_' . $attribute,
                 'description' => 'Filter facet "' . $attribute . '"',
-                'condition' => [
-                    'anchoring' => 'contains',
-                    'pattern' => '{facet:' . $attribute . '}',
-                    'context' => 'magento_filters',
-                ],
+                'conditions' => [$condition],
                 'consequence' => [
                     'params' => [
                         'automaticFacetFilters' => [$attribute],
