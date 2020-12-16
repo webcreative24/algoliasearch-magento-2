@@ -21,6 +21,9 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
     /** @var ProxyHelper */
     private $proxyHelper;
 
+    /** @var PersonalizationHelper */
+    private $personalizationHelper;
+
     /** @var ModuleManager */
     private $moduleManager;
 
@@ -66,6 +69,7 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
         \Magento\Framework\App\Helper\Context $context,
         ConfigHelper $configHelper,
         ProxyHelper $proxyHelper,
+        PersonalizationHelper $personalizationHelper,
         ModuleManager $moduleManager,
         ObjectManagerInterface $objectManager,
         ExtensionNotification $extensionNotification,
@@ -75,6 +79,7 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
     ) {
         $this->configHelper = $configHelper;
         $this->proxyHelper = $proxyHelper;
+        $this->personalizationHelper = $personalizationHelper;
         $this->moduleManager = $moduleManager;
         $this->objectManager = $objectManager;
         $this->extensionNotification = $extensionNotification;
@@ -336,7 +341,6 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
     public function getPersonalizationStatus()
     {
         $info = $this->proxyHelper->getInfo(ProxyHelper::INFO_TYPE_PERSONALIZATION);
-
         $status = 2;
 
         if ($info
@@ -344,6 +348,11 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
             && array_key_exists('personalization_enabled_at', $info)) {
             if (!$info['personalization']) {
                 $status = 0;
+
+                // If perso is not avaible in the plan but activated in admin for some reason, turn it off
+                if ($this->personalizationHelper->isPersoEnabled()) {
+                    $this->personalizationHelper->disablePerso();
+                }
             }
             if ($info['personalization_enabled_at'] === null) {
                 $status = min(1, $status);
