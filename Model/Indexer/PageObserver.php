@@ -9,7 +9,7 @@ use Magento\Framework\Model\AbstractModel;
 class PageObserver
 {
     private $indexer;
-
+  
     /**
      * @var ConfigHelper
      */
