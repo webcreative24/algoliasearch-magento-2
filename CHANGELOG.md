@@ -32,7 +32,6 @@
 ### TOOLING
 -  Update CI testing (#1140)
 
-
 ## 3.1.0
 
 ### UPDATES
