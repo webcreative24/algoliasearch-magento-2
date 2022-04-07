@@ -18,21 +18,29 @@ class Observer implements ObserverInterface
     private $registry;
     private $storeManager;
     private $pageConfig;
+    private $request;
 
     public function __construct(
         ConfigHelper $configHelper,
         Registry $registry,
         StoreManagerInterface $storeManager,
-        PageConfig $pageConfig
+        PageConfig $pageConfig,
+        \Magento\Framework\App\Request\Http $http
     ) {
         $this->config = $configHelper;
         $this->registry = $registry;
         $this->storeManager = $storeManager;
         $this->pageConfig = $pageConfig;
+        $this->request = $http;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+        $actionName = $this->request->getFullActionName();
+        if ($actionName === 'swagger_index_index') {
+            return $this;
+        }
+        
         if ($this->config->isEnabledFrontEnd()) {
             if ($this->config->getApplicationID() && $this->config->getAPIKey()) {
                 if ($this->config->isAutoCompleteEnabled() || $this->config->isInstantEnabled()) {
