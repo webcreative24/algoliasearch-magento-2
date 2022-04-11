@@ -40,13 +40,11 @@ class Observer implements ObserverInterface
         if ($actionName === 'swagger_index_index') {
             return $this;
         }
-        
         if ($this->config->isEnabledFrontEnd()) {
             if ($this->config->getApplicationID() && $this->config->getAPIKey()) {
                 if ($this->config->isAutoCompleteEnabled() || $this->config->isInstantEnabled()) {
                     /** @var Layout $layout */
                     $layout = $observer->getData('layout');
-
                     $layout->getUpdate()->addHandle('algolia_search_handle');
 
                     if ($this->config->isDefaultSelector()) {
