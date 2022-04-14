@@ -40,7 +40,6 @@ $extensionRules = [
     'general_phpdoc_tag_rename' => true, 
     'phpdoc_inline_tag_normalizer' => true,
     'phpdoc_tag_type' => true,
-    'phpdoc_inline_tag' => true,
     'phpdoc_order' => true,
     'phpdoc_scalar' => true,
     'phpdoc_separation' => true,
