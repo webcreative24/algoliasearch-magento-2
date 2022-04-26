@@ -206,6 +206,7 @@ class Data
                     $this->algoliaHelper->addObjects($chunk, $toIndexName);
                 } catch (\Exception $e) {
                     $this->logger->log($e->getMessage());
+
                     continue;
                 }
             }
@@ -219,6 +220,7 @@ class Data
                     $this->algoliaHelper->deleteObjects($chunk, $indexName);
                 } catch (\Exception $e) {
                     $this->logger->log($e->getMessage());
+
                     continue;
                 }
             }
@@ -266,6 +268,7 @@ class Data
             }
         } catch (\Exception $e) {
             $this->stopEmulation();
+
             throw $e;
         }
 
@@ -327,6 +330,7 @@ class Data
         $this->startEmulation($storeId);
 
         $this->logger->start('Indexing');
+
         try {
             $this->logger->start('ok');
 
@@ -359,6 +363,7 @@ class Data
             }
         } catch (\Exception $e) {
             $this->stopEmulation();
+
             throw $e;
         }
         $this->logger->stop('Indexing');
@@ -518,6 +523,7 @@ class Data
                 $this->productHelper->canProductBeReindexed($product, $storeId);
             } catch (ProductReindexingException $e) {
                 $productsToRemove[$productId] = $productId;
+
                 continue;
             }
 
@@ -589,6 +595,7 @@ class Data
                 $this->categoryHelper->canCategoryBeReindexed($category, $storeId);
             } catch (CategoryReindexingException $e) {
                 $categoriesToRemove[$categoryId] = $categoryId;
+
                 continue;
             }
 

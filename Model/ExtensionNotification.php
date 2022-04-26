@@ -119,6 +119,7 @@ class ExtensionNotification
     private function checkExtensionVersion()
     {
         $newVersion = null;
+
         try {
             $versionFromRepository = $this->getLatestVersionFromRepository();
             $versionName = $versionFromRepository['name'];

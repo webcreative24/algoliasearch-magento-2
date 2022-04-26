@@ -272,6 +272,7 @@ class CategoryHelper
         }
 
         $imageUrl = null;
+
         try {
             $imageUrl = $category->getImageUrl();
         } catch (\Exception $e) {

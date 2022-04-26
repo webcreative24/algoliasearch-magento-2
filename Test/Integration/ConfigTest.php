@@ -61,6 +61,7 @@ class ConfigTest extends TestCase
         foreach ($facets as $key => $facet) {
             if ($facet['attribute'] === 'categories') {
                 unset($facets[$key]);
+
                 break;
             }
         }
@@ -82,6 +83,7 @@ class ConfigTest extends TestCase
         foreach ($indexSettings['attributesForFaceting'] as $attribute) {
             if ($attribute === 'categories') {
                 $categoriesAttributeIsIncluded = true;
+
                 break;
             }
         }
@@ -103,6 +105,7 @@ class ConfigTest extends TestCase
         foreach ($indexSettings['attributesForFaceting'] as $attribute) {
             if ($attribute === 'categories') {
                 $categoriesAttributeIsIncluded = true;
+
                 break;
             }
         }

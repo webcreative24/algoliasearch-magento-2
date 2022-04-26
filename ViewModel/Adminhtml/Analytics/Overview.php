@@ -218,6 +218,7 @@ class Overview implements \Magento\Framework\View\Element\Block\ArgumentInterfac
         foreach ($array as $item) {
             if ($item['date'] === $date) {
                 $value = $item[$valueKey];
+
                 break;
             }
         }
