@@ -344,6 +344,7 @@ class AnalyticsHelper
             // analytics api requires index name for all calls
             if (!isset($params['index'])) {
                 $msg = __('Algolia Analytics API requires an index name.');
+
                 throw new \Magento\Framework\Exception\LocalizedException($msg);
             }
 

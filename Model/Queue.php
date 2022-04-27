@@ -379,6 +379,7 @@ class Queue
 
             if (count($rawJobs) === $maxJobs) {
                 $jobs = $rawJobs;
+
                 break;
             }
 
@@ -418,6 +419,7 @@ class Queue
 
                 if ($currentJob->canMerge($nextJob, $this->maxSingleJobDataSize)) {
                     $currentJob->merge($nextJob);
+
                     continue;
                 }
             } else {
