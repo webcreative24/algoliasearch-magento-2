@@ -88,6 +88,7 @@ class Save extends \Magento\Backend\App\Action
 
         foreach ($skus as $sku) {
             $sku = trim($sku);
+
             try {
 
                 /** @var \Magento\Catalog\Model\Product $product */
@@ -196,6 +197,7 @@ class Save extends \Magento\Backend\App\Action
                         );
 
                         $this->checkAndReindex($parentProduct, $stores);
+
                         continue;
                     }
                 } else {

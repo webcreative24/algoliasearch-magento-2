@@ -3,11 +3,11 @@
   "description": "Algolia Search integration for Magento 2",
   "type": "magento2-module",
   "license": ["MIT"],
-  "version": "3.2.0",
+  "version": "3.3.0",
   "require": {
     "magento/framework": "~102.0|~103.0",
     "algolia/algoliasearch-client-php": "^2.4",
-    "guzzlehttp/guzzle": "^6.3.3",
+    "guzzlehttp/guzzle": "^7.3.0",
     "ext-json": "*",
     "ext-PDO": "*",
     "ext-mbstring": "*",

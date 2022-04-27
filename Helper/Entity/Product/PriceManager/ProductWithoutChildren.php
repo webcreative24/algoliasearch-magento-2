@@ -191,6 +191,7 @@ abstract class ProductWithoutChildren
             foreach ($productTierPrices as $productTierPrice) {
                 if (!isset($tierPrices[$productTierPrice->getCustomerGroupId()])) {
                     $tierPrices[$productTierPrice->getCustomerGroupId()] = $productTierPrice->getValue();
+
                     continue;
                 }
 

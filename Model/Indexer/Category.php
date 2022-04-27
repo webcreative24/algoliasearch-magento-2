@@ -73,6 +73,7 @@ class Category implements \Magento\Framework\Indexer\ActionInterface, \Magento\F
 
             if (is_array($categoryIds) && count($categoryIds) > 0) {
                 $this->processSpecificCategories($categoryIds, $categoriesPerPage, $storeId);
+
                 continue;
             }
 

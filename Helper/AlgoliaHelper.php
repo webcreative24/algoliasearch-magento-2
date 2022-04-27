@@ -419,6 +419,7 @@ class AlgoliaHelper extends AbstractHelper
 
         if (!isset($this->client)) {
             $msg = 'Operation ' . $methodName . ' could not be performed because Algolia credentials were not provided.';
+
             throw new AlgoliaException($msg);
         }
     }
@@ -470,6 +471,7 @@ class AlgoliaHelper extends AbstractHelper
                     - ID ' . $previousObject['objectID'] . ' - skipped - longest attribute: ' . $longestAttribute;
 
                 unset($objects[$key]);
+
                 continue;
             } elseif ($previousObject !== $object) {
                 $modifiedIds[] = $indexName . ' - ID ' . $previousObject['objectID'] . ' - truncated';
@@ -745,6 +747,7 @@ class AlgoliaHelper extends AbstractHelper
                         unset($filters[$i]);
                         $filters = array_values($filters);
                         $i--;
+
                         break;
                     }
                 }

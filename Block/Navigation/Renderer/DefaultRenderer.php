@@ -63,7 +63,7 @@ class DefaultRenderer extends Template implements FilterRendererInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function render(FilterInterface $filter)
     {
@@ -80,7 +80,7 @@ class DefaultRenderer extends Template implements FilterRendererInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getJsLayout()
     {
@@ -109,7 +109,7 @@ class DefaultRenderer extends Template implements FilterRendererInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function canRenderFilter()
     {

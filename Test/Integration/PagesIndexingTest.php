@@ -43,10 +43,12 @@ class PagesIndexingTest extends IndexingTestCase
         foreach ($results['hits'] as $hit) {
             if ($hit['slug'] === 'no-route') {
                 $noRoutePageExists = true;
+
                 continue;
             }
             if ($hit['slug'] === 'home') {
                 $homePageExists = true;
+
                 continue;
             }
         }
