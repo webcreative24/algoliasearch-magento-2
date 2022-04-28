@@ -105,8 +105,10 @@ abstract class TestCase extends \TC
             $this->assertValues = new Magento_2_01();
         } elseif (version_compare($this->getMagentoVersion(), '2.3.0', '<')) {
             $this->assertValues = new Magento_2_2();
-        } else {
+        } elseif (version_compare($this->getMagentoVersion(), '2.4.3', '<=')) {
             $this->assertValues = new Magento_2_3();
+        } else {
+            $this->assertValues = new Magento244();
         }
 
         $this->algoliaHelper = $this->getObjectManager()->create(AlgoliaHelper::class);
