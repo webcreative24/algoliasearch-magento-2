@@ -17,7 +17,7 @@ class ConfigTest extends TestCase
 
         $indexSettings = $this->algoliaHelper->getIndex($this->indexPrefix . 'default_products')->getSettings();
 
-        $this->assertEquals(4, count($indexSettings['attributesForFaceting']));
+        $this->assertEquals($this->assertValues->attributesForFaceting, count($indexSettings['attributesForFaceting']));
     }
 
     public function testQueryRules()
@@ -77,7 +77,7 @@ class ConfigTest extends TestCase
 
         $indexSettings = $this->algoliaHelper->getIndex($this->indexPrefix . 'default_products')->getSettings();
 
-        $this->assertEquals(3, count($indexSettings['attributesForFaceting']));
+        $this->assertEquals($this->assertValues->automaticalSetOfCategoryAttributesForFaceting, count($indexSettings['attributesForFaceting']));
 
         $categoriesAttributeIsIncluded = false;
         foreach ($indexSettings['attributesForFaceting'] as $attribute) {
@@ -99,7 +99,7 @@ class ConfigTest extends TestCase
 
         $indexSettings = $this->algoliaHelper->getIndex($this->indexPrefix . 'default_products')->getSettings();
 
-        $this->assertEquals(3 + 1, count($indexSettings['attributesForFaceting']));
+        $this->assertEquals($this->assertValues->automaticalSetOfCategoryAttributesForFaceting + 1, count($indexSettings['attributesForFaceting']));
 
         $categoriesAttributeIsIncluded = false;
         foreach ($indexSettings['attributesForFaceting'] as $attribute) {
