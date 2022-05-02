@@ -61,7 +61,7 @@ requirejs([
 
                 if (algoliaConfig.personalization.enabled) {
                     allWidgetConfiguration.configure.enablePersonalization = true;
-                    allWidgetConfiguration.configure.userToken = algoliaAnalytics.userToken;
+                    allWidgetConfiguration.configure.userToken = algoliaAnalytics.getUserToken();
                 }
 
                 return allWidgetConfiguration;
