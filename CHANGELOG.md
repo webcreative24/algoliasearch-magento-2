@@ -1,5 +1,20 @@
 # CHANGE LOG
 
+## 3.3.0
+
+### UPDATES
+- Updated to support the latest released Magento 2.4.4 with PHP 7.4 (#1173)
+- Updated PHP Unit Integration Test for magento 2.4.4 (#1176)
+- Release Notes Automation using github release.yml (#1174)
+
+### FIXES
+- Fixed the merchandised query on Query Merchandiser to display query-based products for merchandising (#1177)
+- Fixed the issue with userToken not being sent to Algolia for the logged-in user for personalisation (#1178)
+- Fixed the issue with requirejs not being defined on the swagger (#1172) 
+
+### TOOLING
+-  Update CS fixer with the Version 3 (#1173)
+
 ## 3.2.0
 
 ### UPDATES
