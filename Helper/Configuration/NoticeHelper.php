@@ -235,15 +235,18 @@ class NoticeHelper extends \Magento\Framework\App\Helper\AbstractHelper
             case 2: $warningContent = 'Personalization is based on actions a user has performed in the past. We help you collect some of the data automatically.</br>
         After you\'ve collected a reasonable amount of data, Personlization can be applied.';
                 $icon = 'icon-warning';
+
                 break;
             // Available but not activated
             case 1: $warningContent = 'To start using this feature, please head over the <a href="https://www.algolia.com/dashboard" target="_blank`">Algolia Dashboard</a>,
         and make sure you\'ve enabled Personalization in your account, as well as agreed to the terms and conditions of using Personalization.';
                 $icon = 'icon-warning';
+
                 break;
             // Not Available
             default: $warningContent = 'To get access to this Algolia feature, please <a target="_blank" href="https://www.algolia.com/contact/enterprise/">contact us</a>.';
                 $icon = 'icon-stars';
+
                 break;
         }
 
