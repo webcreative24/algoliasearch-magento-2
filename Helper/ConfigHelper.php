@@ -750,7 +750,7 @@ class ConfigHelper
 
         $value = $this->configInterface->getValue(constant('self::' . $constant), ScopeInterface::SCOPE_STORE, $storeId);
 
-        return trim($value);
+        return trim((string)$value);
     }
 
     public function preventBackendRendering($storeId = null)

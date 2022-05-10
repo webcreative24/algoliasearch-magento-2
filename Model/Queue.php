@@ -85,9 +85,10 @@ class Queue
         $this->logTable = $resourceConnection->getTableName('algoliasearch_queue_log');
         $this->archiveTable = $resourceConnection->getTableName('algoliasearch_queue_archive');
 
-        $this->db = $resourceConnection->getConnection('core_write');
+        //$this->db = $resourceConnection->getConnection();
 
         $this->objectManager = $objectManager;
+        $this->db = $objectManager->create(ResourceConnection::class)->getConnection('core_write');
         $this->output = $output;
 
         $this->elementsPerPage = $this->configHelper->getNumberOfElementByPage();
@@ -229,13 +230,13 @@ class Queue
                 $this->noOfFailedJobs++;
 
                 // Log error information
-                $logMessage = 'Queue processing ' . $job->getPid() . ' [KO]: 
-                    Class: ' . $job->getClass() . ', 
-                    Method: ' . $job->getMethod() . ', 
+                $logMessage = 'Queue processing ' . $job->getPid() . ' [KO]:
+                    Class: ' . $job->getClass() . ',
+                    Method: ' . $job->getMethod() . ',
                     Parameters: ' . json_encode($job->getDecodedData());
                 $this->logger->log($logMessage);
 
-                $logMessage = date('c') . ' ERROR: ' . get_class($e) . ': 
+                $logMessage = date('c') . ' ERROR: ' . get_class($e) . ':
                     ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine() .
                     "\nStack trace:\n" . $e->getTraceAsString();
                 $this->logger->log($logMessage);
