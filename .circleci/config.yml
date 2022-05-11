@@ -61,11 +61,11 @@ jobs:
     "magento-2.4":
         <<: *shared
         docker:
-            - image: algolia/magento2-circleci:2.4.4-php8.1
+            - image: algolia/magento2-circleci:8.1_2.4.4
 
     "quality-tools":
         docker:
-            - image: algolia/magento2-circleci:2.4.4-php8.1
+            - image: algolia/magento2-circleci:8.1_2.4.4
         working_directory: ~/build_directory/algoliasearch-magento-2
         steps:
             - checkout
