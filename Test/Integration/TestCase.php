@@ -42,7 +42,6 @@ abstract class TestCase extends \TC
 
     public function setUp(): void
     {
-        $this->clearIndices();
         $this->bootstrap();
     }
 
