@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 3.3.1
+
+### UPDATES
+- Updated to support Guzzle Http version with 6.3 and 7.4 for compatibility with Magento 2.4.x  (#1187)
+
 ## 3.3.0
 
 ### UPDATES
