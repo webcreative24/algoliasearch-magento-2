@@ -257,15 +257,9 @@ class ConfigPatch implements SchemaPatchInterface
             ],
         ],
     ];
-    private IndexerInterfaceFactory $indexerFactory;
 
-    /**
-     * @param ConfigInterface $config
-     * @param ProductMetadataInterface $productMetadata
-     * @param ModuleDataSetupInterface $moduleDataSetup
-     * @param SubscriptionFactory $subscriptionFactory
-     * @param IndexerInterfaceFactory $indexerFactory
-     */
+    private $indexerFactory;
+
     public function __construct(
         ConfigInterface $config,
         ProductMetadataInterface $productMetadata,
