@@ -40,7 +40,7 @@
         <column xsi:type="text" name="data" nullable="false" comment="Data"/>
         <column xsi:type="text" name="error_log" nullable="false" comment="Error Log"/>
         <column xsi:type="int" name="data_size" unsigned="true" nullable="true" identity="false" comment="Data Size"/>
-        <column xsi:type="datetime" name="created" on_update="true" nullable="true" comment="Date and time of job creation"/>
+        <column xsi:type="datetime" name="created_at" on_update="true" nullable="true" comment="Date and time of job creation"/>
     </table>
     <table name="algoliasearch_landing_page" resource="default" engine="innodb" comment="Algoliasearch Landing Page Table">
         <column xsi:type="int" name="landing_page_id" unsigned="false" nullable="false" identity="true" comment="Landing Page Id"/>

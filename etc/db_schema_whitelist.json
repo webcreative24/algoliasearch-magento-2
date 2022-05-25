@@ -38,7 +38,8 @@
             "data": true,
             "error_log": true,
             "data_size": true,
-            "created": true
+            "created": true,
+            "created_at": true
         }
     },
     "algoliasearch_landing_page": {
