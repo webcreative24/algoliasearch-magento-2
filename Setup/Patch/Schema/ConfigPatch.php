@@ -32,7 +32,7 @@ class ConfigPatch implements SchemaPatchInterface
     private $subscriptionFactory;
 
 
-    private array $defaultConfigData = [
+    private $defaultConfigData = [
         'algoliasearch_credentials/credentials/enable_backend' => '1',
         'algoliasearch_credentials/credentials/enable_frontend' => '1',
         'algoliasearch_credentials/credentials/application_id' => '',
@@ -98,7 +98,7 @@ class ConfigPatch implements SchemaPatchInterface
         'algoliasearch_advanced/advanced/archive_clear_limit' => '30',
     ];
 
-    private array $defaultArrayConfigData = [
+    private $defaultArrayConfigData = [
         'algoliasearch_autocomplete/autocomplete/sections' => [
             [
                 'name' => 'pages',
