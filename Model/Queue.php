@@ -17,12 +17,12 @@ use Zend_Db_Statement_Exception;
 
 class Queue
 {
-    const FULL_REINDEX_TO_REALTIME_JOBS_RATIO = 0.33;
-    const UNLOCK_STACKED_JOBS_AFTER_MINUTES = 15;
-    const CLEAR_ARCHIVE_LOGS_AFTER_DAYS = 30;
+    public const FULL_REINDEX_TO_REALTIME_JOBS_RATIO = 0.33;
+    public const UNLOCK_STACKED_JOBS_AFTER_MINUTES = 15;
+    public const CLEAR_ARCHIVE_LOGS_AFTER_DAYS = 30;
 
-    const SUCCESS_LOG = 'algoliasearch_queue_log.txt';
-    const ERROR_LOG = 'algoliasearch_queue_errors.log';
+    public const SUCCESS_LOG = 'algoliasearch_queue_log.txt';
+    public const ERROR_LOG = 'algoliasearch_queue_errors.log';
 
     /** @var AdapterInterface */
     private $db;

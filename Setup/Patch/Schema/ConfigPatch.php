@@ -14,12 +14,12 @@ class ConfigPatch implements SchemaPatchInterface
     /**
      * @var ConfigInterface
      */
-    private ConfigInterface $config;
+    private $config;
 
     /**
      * @var ProductMetadataInterface
      */
-    private ProductMetadataInterface $productMetadata;
+    private $productMetadata;
 
     /**
      * @var ModuleDataSetupInterface
@@ -29,7 +29,7 @@ class ConfigPatch implements SchemaPatchInterface
     /**
      * @var SubscriptionFactory
      */
-    private SubscriptionFactory $subscriptionFactory;
+    private $subscriptionFactory;
 
 
     private array $defaultConfigData = [
@@ -321,7 +321,7 @@ class ConfigPatch implements SchemaPatchInterface
             ->fetchAll(\PDO::FETCH_KEY_PAIR);
 
         foreach ($this->defaultConfigData as $path => $value) {
-           if (isset($alreadyInserted[$path])) {
+            if (isset($alreadyInserted[$path])) {
                 continue;
             }
             $this->config->saveConfig($path, $value, 'default', 0);
