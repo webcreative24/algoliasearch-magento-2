@@ -61,11 +61,11 @@ jobs:
     "magento-2.4":
         <<: *shared
         docker:
-            - image: algolia/magento2-circleci:8.1_2.4.4
+            - image: algolia/magento2-circleci:8.1-2.4.4-v1
 
     "quality-tools":
         docker:
-            - image: algolia/magento2-circleci:8.1_2.4.4
+            - image: algolia/magento2-circleci:8.1-2.4.4-v1
         working_directory: ~/build_directory/algoliasearch-magento-2
         steps:
             - checkout
@@ -77,7 +77,7 @@ jobs:
                   keys:
                       - composer-v4-{{ checksum "composer.json" }}
                       - composer-v4-
-                      
+
             - run:
                   name: Prepare environment
                   command: |
