@@ -351,7 +351,7 @@ class QueueTest extends TestCase
         // $jobs = $this->connection->query('SELECT * FROM algoliasearch_queue')->fetchAll();
 
         $mergedJobs = array_values($this->invokeMethod($queue, 'mergeJobs', [$jobs]));
-        $this->assertEquals(12, count($mergedJobs));
+        $this->assertEquals(6, count($mergedJobs));
 
         $expectedCategoryJob = [
             'job_id' => '1',
