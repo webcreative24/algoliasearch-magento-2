@@ -38,7 +38,6 @@
             "data": true,
             "error_log": true,
             "data_size": true,
-            "created": true,
             "created_at": true
         }
     },

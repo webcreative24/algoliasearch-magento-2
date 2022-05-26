@@ -96,7 +96,6 @@
         <container name="algolia_merchandising_query" >
             <htmlContent name="html_content">
                 <block class="Algolia\AlgoliaSearch\Block\Adminhtml\Query\Merchandising" name="merchandising"/>
-                <!--<argument name="block" xsi:type="object">Algolia\AlgoliaSearch\Block\Adminhtml\Query\Merchandising</argument>-->
             </htmlContent>
         </container>
         <container name="js_container">
@@ -118,7 +117,6 @@
         <container name="algolia_notice_container" >
             <htmlContent name="html_content">
                 <block class="Algolia\AlgoliaSearch\Block\Adminhtml\Query\BannerNotice" name="bannernotice"/>
-                <!--<argument name="block" xsi:type="object">Algolia\AlgoliaSearch\Block\Adminhtml\Query\BannerNotice</argument>-->
             </htmlContent>
         </container>
         <field name="banner_image">
@@ -169,19 +167,5 @@
                 </item>
             </argument>
         </field>
-        <!--<field name="banner_content">-->
-        <!--<argument name="data" xsi:type="array">-->
-        <!--<item name="config" xsi:type="array">-->
-        <!--<item name="source" xsi:type="string">query</item>-->
-        <!--<item name="label" xsi:type="string" translate="true">Content</item>-->
-        <!--<item name="dataType" xsi:type="string">text</item>-->
-        <!--<item name="formElement" xsi:type="string">textarea</item>-->
-        <!--<item name="template" xsi:type="string">ui/form/field</item>-->
-        <!--<item name="wysiwyg" xsi:type="boolean">false</item>-->
-        <!--<item name="dataScope" xsi:type="string">banner_content</item>-->
-        <!--<item name="placeholder" xsi:type="string" translate="true">Additional text displayed below the banner</item>-->
-        <!--</item>-->
-        <!--</argument>-->
-        <!--</field>-->
     </fieldset>
     </form>
