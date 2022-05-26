@@ -6,10 +6,10 @@ use Algolia\AlgoliaSearch\Exceptions\AlgoliaException;
 use Algolia\AlgoliaSearch\Helper\AlgoliaHelper;
 use Algolia\AlgoliaSearch\Helper\ConfigHelper;
 use Algolia\AlgoliaSearch\Setup\Patch\Schema\ConfigPatch;
+use Algolia\AlgoliaSearch\Test\Integration\AssertValues\Magento244;
 use Algolia\AlgoliaSearch\Test\Integration\AssertValues\Magento_2_01;
 use Algolia\AlgoliaSearch\Test\Integration\AssertValues\Magento_2_2;
 use Algolia\AlgoliaSearch\Test\Integration\AssertValues\Magento_2_3;
-use Algolia\AlgoliaSearch\Test\Integration\AssertValues\Magento244;
 use Magento\Framework\App\ProductMetadataInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\TestFramework\Helper\Bootstrap;
@@ -142,6 +142,7 @@ abstract class TestCase extends \TC
         $reflection = new \ReflectionClass(get_class($object));
         $method = $reflection->getMethod($methodName);
         $method->setAccessible(true);
+
         return $method->invokeArgs($object, $parameters);
     }
 

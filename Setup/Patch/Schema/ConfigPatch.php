@@ -31,7 +31,6 @@ class ConfigPatch implements SchemaPatchInterface
      */
     private $subscriptionFactory;
 
-
     private $defaultConfigData = [
         'algoliasearch_credentials/credentials/enable_backend' => '1',
         'algoliasearch_credentials/credentials/enable_frontend' => '1',
