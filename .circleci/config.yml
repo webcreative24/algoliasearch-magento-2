@@ -93,7 +93,7 @@ jobs:
 
             # We have to do this again because we restore the cache above, overwriting the vendor with the original.
             mkdir ~/magento_directory/vendor/algolia
-            # rm -rf algoliasearch-magento-2
+            rm -rf algoliasearch-magento-2
             cp -R ~/build_directory/algoliasearch-magento-2 ~/magento_directory/vendor/algolia
             cd ~/magento_directory
             composer dump-autoload
